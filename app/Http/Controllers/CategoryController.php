@@ -15,7 +15,9 @@ class CategoryController extends Controller
      */
     public function index()
     {
-        //
+        $categories = Category::all();
+        $params = ['categories' => $categories];
+        return view('admin.categories.index', $params);
     }
 
     /**
@@ -31,7 +33,6 @@ class CategoryController extends Controller
      */
     public function store(Request $request)
     {
-
         $validated = $request->validate([
             'name' => 'required|string|max:255',
             'icon' => 'required|image|mimes:jpeg,png,jpg|max:2048',
@@ -42,6 +43,7 @@ class CategoryController extends Controller
         try {
             // Pengecekan apakah ada icon yang diinput
             if ($request->hasFile('icon')) {
+                // File input yang langsung di upload ke folder public dengan nama category_icons
                 $iconPath = $request->file('icon')->store('category_icons', 'public');
                 $validated['icon'] = $iconPath;
             }
@@ -61,7 +63,6 @@ class CategoryController extends Controller
             ]);
             throw $error;
         }
-
     }
 
     /**
@@ -77,7 +78,8 @@ class CategoryController extends Controller
      */
     public function edit(Category $category)
     {
-        //
+        $params = ['category' => $category];
+        return view('admin.categories.edit', $params);
     }
 
     /**
@@ -85,7 +87,36 @@ class CategoryController extends Controller
      */
     public function update(Request $request, Category $category)
     {
-        //
+        $validated = $request->validate([
+            'name' => 'sometimes|string|max:255',
+            'icon' => 'sometimes|image|mimes:jpeg,png,jpg|max:2048',
+        ]);
+
+        DB::beginTransaction();
+
+        try {
+            // Pengecekan apakah ada icon yang diinput
+            if ($request->hasFile('icon')) {
+                // File input yang langsung di upload ke folder public dengan nama category_icons
+                $iconPath = $request->file('icon')->store('category_icons', 'public');
+                $validated['icon'] = $iconPath;
+            }
+
+            $validated['slug'] = Str::slug($validated['name']);
+
+            $category->update($validated);
+
+            DB::commit(); // Simpan transaksi jika berhasil
+            return redirect()->route('admin.categories.index');
+
+        } catch (\Exception $th) {
+            // Batalkan transaksi
+            DB::rollBack();
+            $error = ValidationException::withMessages([
+                'system_error' => ['System error' . $th->getMessage()],
+            ]);
+            throw $error;
+        }
     }
 
     /**
@@ -93,6 +124,15 @@ class CategoryController extends Controller
      */
     public function destroy(Category $category)
     {
-        //
+        try {
+            $category->delete();
+            return redirect()->route('admin.categories.index');
+        }catch (\Exception $th) {
+            DB::rollBack();
+            $error = ValidationException::withMessages([
+                'system_error' => ['System error' . $th->getMessage()],
+            ]);
+            throw $error;
+        }
     }
 }
