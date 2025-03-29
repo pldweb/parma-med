@@ -18,4 +18,16 @@ class FrontController extends Controller
         ];
         return view('front.index', $params);
     }
+
+    public function productDetails(Product $product)
+    {
+        $params = ['product' => $product];
+        return view('front.details', $params);
+
+    }
+
+    public function categoryDetails(Category $category)
+    {
+        dd($category);
+    }
 }

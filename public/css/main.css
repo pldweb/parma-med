@@ -1047,49 +1047,49 @@ a{
   background-color: rgb(255 255 255 / var(--tw-bg-opacity));
 }
 
-.bg-\[url\(\'\/public\/assets\/svgs\/doctor-help\.svg\'\)\]{
-  background-image: url('/public/assets/svgs/doctor-help.svg');
-}
+/*.bg-\[url\(\'\/public\/assets\/svgs\/doctor-help\.svg\'\)\]{*/
+/*  background-image: url('/public/assets/svgs/doctor-help.svg');*/
+/*}*/
 
-.bg-\[url\(\'\/public\/assets\/svgs\/ic-email\.svg\'\)\]{
-  background-image: url('/public/assets/svgs/ic-email.svg');
-}
+/*.bg-\[url\(\'\/public\/assets\/svgs\/ic-email\.svg\'\)\]{*/
+/*  background-image: url('/public/assets/svgs/ic-email.svg');*/
+/*}*/
 
-.bg-\[url\(\'\/public\/assets\/svgs\/ic-folder-add\.svg\'\)\]{
-  background-image: url('/public/assets/svgs/ic-folder-add.svg');
-}
+/*.bg-\[url\(\'\/public\/assets\/svgs\/ic-folder-add\.svg\'\)\]{*/
+/*  background-image: url('/public/assets/svgs/ic-folder-add.svg');*/
+/*}*/
 
-.bg-\[url\(\'\/public\/assets\/svgs\/ic-house\.svg\'\)\]{
-  background-image: url('/public/assets/svgs/ic-house.svg');
-}
+/*.bg-\[url\(\'\/public\/assets\/svgs\/ic-house\.svg\'\)\]{*/
+/*  background-image: url('/public/assets/svgs/ic-house.svg');*/
+/*}*/
 
-.bg-\[url\(\'\/public\/assets\/svgs\/ic-location\.svg\'\)\]{
-  background-image: url('/public/assets/svgs/ic-location.svg');
-}
+/*.bg-\[url\(\'\/public\/assets\/svgs\/ic-location\.svg\'\)\]{*/
+/*  background-image: url('/public/assets/svgs/ic-location.svg');*/
+/*}*/
 
-.bg-\[url\(\'\/public\/assets\/svgs\/ic-lock\.svg\'\)\]{
-  background-image: url('/public/assets/svgs/ic-lock.svg');
-}
+/*.bg-\[url\(\'\/public\/assets\/svgs\/ic-lock\.svg\'\)\]{*/
+/*  background-image: url('/public/assets/svgs/ic-lock.svg');*/
+/*}*/
 
-.bg-\[url\(\'\/public\/assets\/svgs\/ic-map\.svg\'\)\]{
-  background-image: url('/public/assets/svgs/ic-map.svg');
-}
+/*.bg-\[url\(\'\/public\/assets\/svgs\/ic-map\.svg\'\)\]{*/
+/*  background-image: url('/public/assets/svgs/ic-map.svg');*/
+/*}*/
 
-.bg-\[url\(\'\/public\/assets\/svgs\/ic-phone\.svg\'\)\]{
-  background-image: url('/public/assets/svgs/ic-phone.svg');
-}
+/*.bg-\[url\(\'\/public\/assets\/svgs\/ic-phone\.svg\'\)\]{*/
+/*  background-image: url('/public/assets/svgs/ic-phone.svg');*/
+/*}*/
 
-.bg-\[url\(\'\/public\/assets\/svgs\/ic-profile\.svg\'\)\]{
-  background-image: url('/public/assets/svgs/ic-profile.svg');
-}
+/*.bg-\[url\(\'\/public\/assets\/svgs\/ic-profile\.svg\'\)\]{*/
+/*  background-image: url('/public/assets/svgs/ic-profile.svg');*/
+/*}*/
 
-.bg-\[url\(\'\/public\/assets\/svgs\/ic-search\.svg\'\)\]{
-  background-image: url('/public/assets/svgs/ic-search.svg');
-}
+/*.bg-\[url\(\'\/public\/assets\/svgs\/ic-search\.svg\'\)\]{*/
+/*  background-image: url('img/ic-search.svg');*/
+/*}*/
 
-.bg-\[url\(\'\/public\/assets\/svgs\/pipeline\.svg\'\)\]{
-  background-image: url('/public/assets/svgs/pipeline.svg');
-}
+/*.bg-\[url\(\'\/public\/assets\/svgs\/pipeline\.svg\'\)\]{*/
+/*  background-image: url('/public/assets/svgs/pipeline.svg');*/
+/*}*/
 
 .bg-auto{
   background-size: auto;
