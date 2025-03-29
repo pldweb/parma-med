@@ -6,12 +6,17 @@
     <title>Landing Page | Parma</title>
     <meta name="csrf-token" content="{{ csrf_token() }}">
     <link rel="shortcut icon" href="{{asset('img/logo-mark.svg')}}" type="image/x-icon">
-    <link rel="stylesheet" href="{{asset('css/main.css')}}">
     <link rel="stylesheet" href="{{asset('css/flickity.min.css')}}">
 
+    {{--CSS Custom--}}
+    <link rel="stylesheet" href="{{asset('css/main.css')}}">
+    <link rel="stylesheet" href="{{asset('css/default.css')}}">
+
+    {{-- Jquery & Sweetalert--}}
     <script src="{{asset('script/jquery-3.7.1.min.js')}}"></script>
     <script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
     @include('sweetalert::sweetalert')
+
 </head>
 <body>
 
