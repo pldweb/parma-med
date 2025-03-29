@@ -16,14 +16,24 @@
                         {{ __('Dashboard') }}
                     </x-nav-link>
                 </div>
+
+                <!-- Hanya untuk menampilkan kepada role owner -->
+                @role('owner')
+                    <div class="hidden space-x-8 sm:-my-px sm:ms-10 sm:flex">
+                        <x-nav-link :href="route('admin.products.index')" :active="request()->routeIs('products.index')">
+                            {{ __('Manage Products') }}
+                        </x-nav-link>
+                    </div>
+                    <div class="hidden space-x-8 sm:-my-px sm:ms-10 sm:flex">
+                        <x-nav-link :href="route('admin.categories.index')" :active="request()->routeIs('categories.index')">
+                            {{ __('Manage Categories') }}
+                        </x-nav-link>
+                    </div>
+                @endrole()
+
                 <div class="hidden space-x-8 sm:-my-px sm:ms-10 sm:flex">
-                    <x-nav-link :href="route('admin.products.index')" :active="request()->routeIs('dashboard')">
-                        {{ __('Manage Products') }}
-                    </x-nav-link>
-                </div>
-                <div class="hidden space-x-8 sm:-my-px sm:ms-10 sm:flex">
-                    <x-nav-link :href="route('admin.categories.index')" :active="request()->routeIs('dashboard')">
-                        {{ __('Manage Categories') }}
+                    <x-nav-link :href="route('product_transactions.index')" :active="request()->routeIs('product_transactions.index')">
+                        {{ Auth::user()->hasRole('owner') ? __('Apotek Order') : __('My Order')}}
                     </x-nav-link>
                 </div>
             </div>

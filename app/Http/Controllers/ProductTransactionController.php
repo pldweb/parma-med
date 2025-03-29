@@ -12,7 +12,8 @@ class ProductTransactionController extends Controller
      */
     public function index()
     {
-        //
+        $params = [''=> ''];
+        return view('admin.product_transactions.index', $params);
     }
 
     /**
